@@ -1,0 +1,68 @@
+<div class="container-grid">
+  <header class="header">
+      <div class="logo-title">
+        <div id="logo" class="logo-portfolio"><img src="assets/art/{{logo}}" alt="logo"></div>
+        <div class="title-portfolio">{{title}}</div>
+      </div>
+      <div ngClass="theme-mode" >
+        <img appTheme  id="theme" src="assets/icons/icon-mode-dark.png" alt="theme-mode" class="theme" data-mode="#000000"
+        data-bgsection="inherit" data-text="#FFFFFF" data-art = "invert(0%) sepia(20%) saturate(70%) hue-rotate(1deg) brightness(100%) contrast(100%)" data-bgcolor="inherit" (click)="changeTheme()">
+        <span class="text-tooltip" #tooltiptext>Tema oscuro</span>
+      </div>
+  </header>
+
+  <div class="aside-menu">
+    <div class="welcome">
+      <div class="animation-text">
+        <div id="welcome-start" class="w-start">
+          <span class="bracket">&#123;</span>
+          <div class="content-start">
+            <ul class="text-welcome">
+              <li *ngFor="let item of text_welcome" >{{item}}</li>
+            </ul>
+          </div>
+          <span class="bracket">&#125;</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu">
+      <ul>
+        <!--<li><a routerLink="home" routerLinkActive="active" ariaCurrentWhenActive="page" ngClass="ef-slide">inicio</a></li>-->
+        <li><a routerLink="about" routerLinkActive="active" ariaCurrentWhenActive="page" ngClass="ef-slide" >sobre mí</a></li>
+        <li><a routerLink="portfolio" routerLinkActive="active" ariaCurrentWhenActive="page" ngClass="ef-slide">proyectos</a></li>
+        <li><a routerLink="contact" routerLinkActive="active" ariaCurrentWhenActive="page" ngClass="ef-slide">contacto</a></li>
+        <li class="l-networks">
+          <ul class="menu-networks">
+            <li *ngFor="let item of social_networks">
+              <a href="{{item.link_network}}" target="_blank">
+                <i class="icon">
+                  <img src="assets/icons/{{item.image_network}}" alt="{{item.name_network}}">
+                </i>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="main" class="main">
+    <router-outlet></router-outlet>
+    <div class="shape">
+      <img src="assets/art/html-shape.png">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; {{year_design | date:'yyyy'}} {{footer_text}}</p>
+    <ul class="list-networks">
+      <li *ngFor="let item of social_networks">
+        <a href="{{item.link_network}}" target="_blank">
+          <i class="icon">
+            <img src="assets/icons/{{item.image_network}}" alt="{{item.name_network}}">
+          </i>
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>

@@ -1,0 +1,19 @@
+<div id="container-about" class="content-about">
+  <div ngClass="creative-me" id="creative-me">
+      <ng-container *ngIf="!dark; else art_darkmode">
+        <img id="creative-art" src="assets/art/{{creativeMe}}" alt="Art Vivi" class="img-art">
+      </ng-container>
+      </div>
+    <!-- IF THEME IS DARK MODE CHANGE IMAGE-->
+  <ng-template #art_darkmode>
+      <img id="creative-art" src="assets/art/creative-vivi-art-dark.png" alt="Art Vivi" class="img-art">
+  </ng-template>
+  <div class="about">
+    <section>
+      <p class="title-about">{{title}}</p>
+      <p class="subtitle-about">{{subtitle}}</p>
+      <article class="text-about" [innerHTML]="presentation"></article>
+    </section>
+  </div>
+</div>
+

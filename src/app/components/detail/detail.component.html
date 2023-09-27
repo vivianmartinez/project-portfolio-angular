@@ -1,0 +1,30 @@
+<div *ngIf="project" ngClass="content-detail">
+    <div class="specifications">
+      <h3>{{title}} {{project.name_project}}</h3>
+      <p>{{project.big_description}}</p>
+      <!-- list project specifications -->
+      <ul ngClass="list-specifications">
+        <li *ngFor="let item of project.specifications">{{item}}</li>
+      </ul>
+      <div ngClass="skills">
+        <span ngClass="title-tools">Lenguajes y herramientas utilizadas:</span>
+          <!-- Percent Bar tools - skills -->
+        <div ngClass="skills-info" >
+            <div ngClass="skills-bar">
+              <!-- create a class for each tool color and percent -use custom pipes -->
+              <div *ngFor="let item of project.tools_project" ngClass="skill-item percent-skill__{{(item | convertData).percent}} tool__{{(item | convertData).name | lowercase | replaceCharacter: ' ': '-'}}"></div>
+            </div>
+            <div ngClass="percents">
+              <div *ngFor="let item of project.tools_project" ngClass="w-percent percent-skill__{{(item | convertData).percent}}">{{(item | convertData).percent}}%</div>
+            </div>
+        </div>
+
+        <ul *ngFor="let item of project.tools_project">
+          <li ngClass="tool__{{(item | convertData).name | lowercase | replaceCharacter:' ':'-'}}">
+            {{(item | convertData).name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div><button ngClass="btn-project-back" (click)="redirectPortfolio()">Volver</button></div>
+</div>

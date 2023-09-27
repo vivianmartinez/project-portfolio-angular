@@ -1,0 +1,27 @@
+<div ngClass="content-portfolio">
+  <p ngClass="title-content">{{title}}</p>
+  <div ngClass="content-projects">
+    <div *ngFor="let item of projects" >
+        <div ngClass="single-project">
+            <div ngClass="image-project"  #imgproject>
+              <a href="{{item.url_project}}" target="_blank">
+                <div class="img-st" >
+                  <img src="assets/images/{{item.image_project}}" alt="{{item.name_project}} Photo">
+                </div>
+                <div ngClass="mask-image">
+                    <!-- logo de empresa -->
+                    <div *ngIf="item.logo">
+                      <img src="assets/images/{{item.logo}}" alt="Logo {{item.name_project}}" ngClass="logo-project">
+                    </div>
+                </div>
+              </a>
+            </div>
+            <div ngClass="description">
+              <div ngClass="description-title">{{item.name_project}}</div>
+              <div class="big-description">{{item.big_description | trimDescription}}...</div>
+            </div>
+            <div class="more"><a [routerLink]="['/project',item.id]" ngClass="btn-project">Ver más</a></div>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<!---->
+<div class="content-contact">
+  <div class="container-form">
+    <div class="contact-form">
+      <!--  <form action="https://formsubmit.co/ba5304feb1c11ef56a546192a528a568" method="POST" > -->
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+          <label for="name">Nombre:</label>
+          <input type="text" name="name" #contactName = "ngModel" [(ngModel)] = "user.name" required pattern="[a-zA-Z\s]+">
+          <div class="error-message"><span *ngIf="contactName.touched && !contactName.valid" [ngStyle]="{'color': '#00bbff','font-weight': 'bold','display':'block','float':'right'}">El nombre no es válido</span></div>
+
+          <label>Email:</label>
+          <input type="text" name="email" #contactEmail = "ngModel" [(ngModel)] = "user.email" required pattern="^([\w]+([\.-]?[\w])*)[@]{1}([\w]+([\.-]?[\w])*)(\.\w{2,3})$">
+          <div class="error-message"><span *ngIf="contactEmail.touched && !contactEmail.valid" [ngStyle]="{'color': '#00bbff','font-weight': 'bold','display':'block','float':'right'}">El email no es válido</span></div>
+
+          <label for="subject">Asunto:</label>
+          <input type="text" name="subject" #subject = "ngModel" [(ngModel)] = "user.subject" required pattern="[a-zA-Z\s]+">
+          <div class="error-message"><span *ngIf="subject.touched && !subject.valid" [ngStyle]="{'color': '#00bbff','font-weight': 'bold','display':'block','float':'right'}">El asunto no es válido</span></div>
+
+          <label for="message">Mensaje:</label>
+          <textarea name="message" rows="10" #message = "ngModel" [(ngModel)] = "user.message" required pattern="[\w\s]+"></textarea>
+          <div class="error-message"><span *ngIf="message.touched && !message.valid" [ngStyle]="{'color': '#00bbff','font-weight': 'bold','display':'block','float':'right'}">El mensaje no es válido</span></div>
+
+          <button type="submit" class="btn-contact">Enviar</button>
+          <input type="hidden" name="_next" value="/">
+        </form>
+    </div>
+    <div class="art-mail">
+      <div class="image-mail">
+          <ng-container *ngIf="!dark; else maildarkmode">
+          <img src="assets/art/{{artmail}}" alt="Mail Art" class="img-art">
+          </ng-container>
+      </div>
+      <ng-template #maildarkmode>
+        <img src="assets/art/art-mail-dark.png" alt="Mail Art" class="img-art" [ngClass]="{'filter-mail': dark}">
+      </ng-template>
+    </div>
+  </div>
+</div>
