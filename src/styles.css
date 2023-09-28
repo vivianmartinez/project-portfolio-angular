@@ -10,7 +10,7 @@
   --font-web: "Morgan", Arial, Helvetica, sans-serif;
   --font-content: "poppins",Arial, Helvetica, sans-serif;
   --filter-color: invert(76%) sepia(37%) saturate(3179%) hue-rotate(9deg) brightness(101%) contrast(102%);
-  --filter-creative-mail: invert(80%) sepia(245%) saturate(240%) hue-rotate(1deg) brightness(100%) contrast(100%);
+  --filter-creative-mail: invert(0%) sepia(5%) saturate(55%) hue-rotate(1deg) brightness(100%) contrast(100%);
   --color-bg-mail: #e6c101;
 }
 
@@ -729,27 +729,24 @@ a.btn-project{
   vertical-align: middle;
   font-size: 20px;
 }
-
 .btn-project-back, .btn-contact{
-  background-color: var(--color-web);
+  background-color: #000000;
   border: none;
   cursor: pointer;
   float: right;
   padding: 14px 20px;
   font-family: var(--font-web);
   font-size: 15px;
-  color: #ffffff;
+  color: #000000;
   transition: 0.2s;
 }
-button.btn-contact{
-  margin-top: 20px;
-  clear: both;
-}
+
 button.btn-project-back:hover, button.btn-contact:hover {
   transform: scale(1.1);
 }
 .content-contact{
   width: 100%;
+  margin-top: 100px;
   display: flex;
   justify-content:right;
   overflow: hidden;
@@ -761,7 +758,6 @@ button.btn-project-back:hover, button.btn-contact:hover {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 120px;
   background-color: var(--color-bg-mail);
   transition: var(--bg-transition);
   animation: 1s linear 0s normal forwards appearmail;
@@ -779,10 +775,8 @@ button.btn-project-back:hover, button.btn-contact:hover {
 }
 .contact-form form{
   width: 0;
-  background-color: var(--section-bg-color);
   display: block;
-  padding: 50px 50px 90px;
-  transition: var(--bg-transition);
+  padding: 50px 50px 40px 80px;
   animation: 0.5s linear 0s normal forwards appearform;
 }
 @keyframes appearform{
@@ -799,16 +793,34 @@ button.btn-project-back:hover, button.btn-contact:hover {
   padding-left: 10px;
   font-size: 15px;
 }
-.contact-form form textarea {
+.contact-form form textarea{
   width: 100%;
   border-radius: 5px;
   padding: 10px;
   font-size: 15px;
-  font-family: var(--font-web);
+  font-family: var(--font-content);
   border: 1px solid #d1d1d1;
 }
-.error-message {
+.disabled-btn{
+  pointer-events: none;
+}
+.msg-error{
+  color: #f33e3e;
+  display: block;
+  float: right;
+}
+.section-submit{
+  clear: both;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+button.btn-contact{
+  border: 2px solid #e6c101;
+}
+.msg-validate{
   height: 20px;
+  font-weight: bold;
 }
 .art-mail{
   width: 50%;

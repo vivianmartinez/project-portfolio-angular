@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ConvertDataPipe } from './pipes/convert-data.pipe';
 import { ReplaceCharacterPipe } from './pipes/replace-character';
@@ -33,7 +34,8 @@ import { ThemeDirective } from './theme.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
