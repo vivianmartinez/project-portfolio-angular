@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit, OnDestroy{
   public dark: boolean = false;
   private subscription: Subscription = new Subscription();
 
-  constructor(private themeService: ThemeService){
+  constructor(private _themeService: ThemeService){
     this.title        = about.title;
     this.subtitle     = about.subtitle;
     this.presentation = about.presentation;
@@ -25,7 +25,7 @@ export class AboutComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    this.subscription = this.themeService.themeDark$.subscribe((response:any)=>this.dark = response);
+    this.subscription = this._themeService.themeDark$.subscribe((response:any)=>this.dark = response);
   }
 
   ngOnDestroy():void{

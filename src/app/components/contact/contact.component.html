@@ -1,10 +1,9 @@
-<!---->
 <div class="content-contact">
   <div class="container-form">
     <div class="contact-form">
         <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
           <label for="name">Nombre:</label>
-          <input type="text" name="name" #contactName = "ngModel" [(ngModel)] = "user.name" required pattern="[a-zA-Z\s]+">
+          <input type="text" name="name" #contactName = "ngModel" [(ngModel)] = "user.name" required pattern="[áéíóúÁÉÍÓÚa-zA-Z\s]+">
           <div class="msg-validate"><span *ngIf="contactName.touched && !contactName.valid" class="msg-error">El nombre no es válido</span></div>
 
           <label>Email:</label>
@@ -12,24 +11,25 @@
           <div class="msg-validate"><span *ngIf="contactEmail.touched && !contactEmail.valid" class="msg-error">El email no es válido</span></div>
 
           <label for="subject">Asunto:</label>
-          <input type="text" name="subject" #subject = "ngModel" [(ngModel)] = "user.subject" required pattern="[a-zA-Z\s]+">
+          <input type="text" name="subject" #subject = "ngModel" [(ngModel)] = "user.subject" required pattern="[áéíóúÁÉÍÓÚ\w\s]+">
           <div class="msg-validate"><span *ngIf="subject.touched && !subject.valid" class="msg-error">El asunto no es válido</span></div>
 
           <label for="message">Mensaje:</label>
-          <textarea name="message" rows="5" #message = "ngModel" [(ngModel)] = "user.message" required pattern="[\w\s]+"></textarea>
+          <textarea name="message" rows="5" #message = "ngModel" [(ngModel)] = "user.message" required pattern="[áéíóúÁÉÍÓÚ\w\s\d\.,-¿\\?]+"></textarea>
           <div class="msg-validate"><span *ngIf="message.touched && !message.valid" class="msg-error">El mensaje no es válido</span></div>
-
+          <!-- sección envío datos y respuesta al usuario -->
           <div class="section-submit">
+            <div class="msg-loader" #loader><span class="spin"></span>Enviando...</div>
             <!-- visualizar respuesta de envío de formulario -->
             <div class="msg-validate">
-              <div [ngStyle]="{'color' : response_mail == 'success' ? 'green' : '#f33e3e'}" *ngIf="response_mail != 'process'">
+              <div [ngStyle]="{'color' : response_mail == 'success' ? '#ffffff' : '#f33e3e'}" *ngIf="response_mail != 'send'">
                 <ng-container *ngIf="response_mail == 'success' ; else failedmail">
-                  Su mensaje ha sido enviado con éxito.
+                  ¡Su mensaje ha sido enviado con éxito!
                 </ng-container>
               </div>
-              <ng-template #failedmail>Ha ocurrido un error, no se ha podido enviar su mensaje.</ng-template>
+              <ng-template #failedmail>{{response_mail}}</ng-template>
             </div>
-            <!-- submit form -->
+            <!-- envío formulario -->
             <button type="submit" class="btn-contact" [disabled]="!contactForm.valid" [ngClass]="{'disabled-btn':!contactForm.valid}" [ngStyle]="{'background-color': !contactForm.valid ? '#d1d1d1' : '#000000', 'color': !contactForm.valid ? '#000000' : '#e6c101' }">Enviar</button>
           </div>
         </form>

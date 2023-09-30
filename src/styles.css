@@ -197,6 +197,8 @@ li.l-networks{
 .main{
   grid-column: 2 / -1;
   height: auto;
+  overflow: hidden;
+  position: relative;
 }
 .shape{
   position: fixed;
@@ -414,10 +416,10 @@ p.title-about{
 }
 p.subtitle-about{
   margin-top: 5px;
-  font-size: 13px;
+  font-size: 14px;
 }
 article.text-about {
-  font-size: 14px;
+  font-size: 15px;
   padding-bottom: 30px;
 }
 .list-networks{
@@ -729,34 +731,36 @@ a.btn-project{
   vertical-align: middle;
   font-size: 20px;
 }
-.btn-project-back, .btn-contact{
-  background-color: #000000;
+.btn-project-back{
+  background-color: #e6c101;
+  color: #ffffff;
   border: none;
+}
+.btn-project-back, .btn-contact{
   cursor: pointer;
   float: right;
   padding: 14px 20px;
   font-family: var(--font-web);
   font-size: 15px;
-  color: #000000;
   transition: 0.2s;
 }
-
 button.btn-project-back:hover, button.btn-contact:hover {
   transform: scale(1.1);
 }
 .content-contact{
-  width: 100%;
-  margin-top: 100px;
+  padding-top: 80px;
   display: flex;
   justify-content:right;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 .container-form{
   font-family: var(--font-content);
   color: var(--text-color-mode);
   width: 0%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   background-color: var(--color-bg-mail);
   transition: var(--bg-transition);
@@ -776,7 +780,7 @@ button.btn-project-back:hover, button.btn-contact:hover {
 .contact-form form{
   width: 0;
   display: block;
-  padding: 50px 50px 40px 80px;
+  padding: 50px 50px 40px 100px;
   animation: 0.5s linear 0s normal forwards appearform;
 }
 @keyframes appearform{
@@ -820,13 +824,36 @@ button.btn-contact{
 }
 .msg-validate{
   height: 20px;
-  font-weight: bold;
+  width: 100%;
+}
+.msg-loader{
+  display: flex;
+  color: #ffffff;
+}
+.spin{
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 3px solid #00b4b4;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: loader 1s linear infinite;
+}
+
+@keyframes loader {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
 }
 .art-mail{
   width: 50%;
+  height: 100%;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
   transition: 1s;
+  padding-bottom: 110px;
 }
 .image-mail{
   width: 450px;
@@ -875,6 +902,43 @@ button.btn-contact{
   margin: 0;
 }
 
+@media screen and (max-width: 1280px) {
+  .container-form{
+    display: block;
+  }
+  .contact-form{
+    width: 100%;
+  }
+  .contact-form form {
+    padding: 50px 100px;
+  }
+  .art-mail{
+    width: 100%;
+    align-items: flex-start;
+  }
+  .image-mail {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container-form{
+    display: block;
+  }
+  .contact-form{
+    width: 100%;
+  }
+  .contact-form form {
+    padding: 50px 100px;
+  }
+  .art-mail{
+    width: 100%;
+    align-items: flex-start;
+  }
+  .image-mail {
+    width: 50%;
+  }
+}
+
 @media screen and (max-width: 768px){
   .container-grid{
     grid-template-columns: 100%;
@@ -893,7 +957,15 @@ button.btn-contact{
     position: unset;
     z-index: 0;
   }
-
+  .aside-menu .menu ul {
+    position: inherit;
+    z-index: 0;
+    margin-top: 2em;
+  }
+  .animation-text{
+    position: inherit;
+    margin-top: 2em;
+  }
   .content-about{
     padding: 30px;
   }
@@ -923,57 +995,35 @@ button.btn-contact{
     max-height: 600px;
     width: 100%;
   }
+  .skills-info {
+    width: 100%;
+  }
   .shape{
     position: absolute;
-    width: 90%;
-    top: 100vh;
+    width: 100%;
   }
   .shape img{
     width: 100%;
   }
-  .skills-info {
+  .content-contact{
+    margin:0;
+  }
+  .container-form{
+    display: block;
+  }
+  .container-form form{
+    padding: 50px 20px;
+  }
+  .contact-form{
     width: 100%;
   }
-  .aside-menu .menu ul {
-    position: inherit;
-    z-index: 0;
-    margin-top: 2em;
-  }
-
-  .animation-text{
-    position: inherit;
-    margin-top: 2em;
-  }
-}
-@media screen and (max-width: 1024px) {
-
-  .creative-me > img {
-    width: 60%;
-  }
-  .about{
+  .art-mail {
     width: 100%;
+    margin-bottom: 40px;
+    align-items: flex-start;
   }
-  .content-projects {
-    justify-content: center;
-  }
-}
-
-@media screen and (min-height: 1180px){
-  .container-grid{
-    grid-template-columns: 100%;
-    grid-template-rows: 0.5fr 1fr auto;
-    height: auto;
-  }
-  .container-grid .aside-menu{
-    grid-column: 1 / -1;
-    padding-top: 2em;
-  }
-  .container-grid .main{
-    grid-column: 1 / -1;
-  }
-  .single-project{
-    width: 320px;
-    margin: 0 15px 30px 0;
+  .image-mail {
+    width: 80%;
   }
 }
 @media screen and (max-width: 280px) {
@@ -990,5 +1040,98 @@ button.btn-contact{
     padding: 0;
     overflow: hidden;
     margin: 0;
+  }
+  .container-form form {
+    padding: 0;
+  }
+  .msg-validate {
+    font-size: 13px;
+  }
+}
+@media screen and (min-height: 1180px){
+  .container-grid{
+    grid-template-columns: 100%;
+    grid-template-rows: 0.5fr 1fr auto;
+    height: auto;
+  }
+  .container-grid .aside-menu{
+    grid-column: 1 / -1;
+    padding-top: 5em;
+  }
+  .container-grid .main{
+    grid-column: 1 / -1;
+    padding-top: 0;
+  }
+  .aside-menu ul {
+    position: unset;
+    z-index: 0;
+  }
+  .aside-menu .menu ul {
+    position: inherit;
+    z-index: 0;
+    margin-top: 2em;
+  }
+  .animation-text{
+    position: inherit;
+    margin-top: 2em;
+  }
+  .content-about{
+    padding: 30px;
+  }
+  .about{
+    width: 100%;
+  }
+  article.text-about {
+    max-height: 350px;
+    overflow-y: scroll;
+  }
+  .content-projects {
+    max-height: 600px;
+    justify-content: center;
+  }
+  .icons-networks > a > img {
+    width: 20px;
+  }
+  .single-project{
+    width: 280px;
+    height: 360px;
+  }
+  .image-project{
+    height: 35%;
+  }
+  .content-detail{
+    overflow-y: scroll;
+    max-height: 600px;
+    width: 100%;
+  }
+  .skills-info {
+    width: 100%;
+  }
+  .shape{
+    position: absolute;
+    width: 100%;
+  }
+  .shape img{
+    width: 100%;
+  }
+  .content-contact{
+    margin:0;
+  }
+  .container-form{
+    display: block;
+  }
+  .container-form form{
+    padding: 50px;
+  }
+  .contact-form{
+    width: 100%;
+  }
+  .art-mail {
+    width: 100%;
+    margin-bottom: 40px;
+    align-items: flex-start;
+  }
+  .image-mail {
+    width: 80%;
   }
 }

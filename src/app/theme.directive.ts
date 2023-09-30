@@ -14,7 +14,6 @@ export class ThemeDirective {
     rootStyles.setProperty('--filter-creative',e.target.dataset.art);
     rootStyles.setProperty('--color-bg-mail',e.target.dataset.bgcolor);
 
-
     this.theme.nativeElement.classList.toggle('dark--mode');
 
     if (this.theme.nativeElement.classList.contains('dark--mode')){
@@ -22,30 +21,22 @@ export class ThemeDirective {
       this.theme.nativeElement.setAttribute('data-text','#000000');
       this.theme.nativeElement.setAttribute('data-bgsection','#ffffffd1');
       this.theme.nativeElement.setAttribute('data-bgcolor','#e6c101');
-      //this.theme.nativeElement.setAttribute('data-art','invert(0%) sepia(0%) saturate(100%) hue-rotate(1deg) brightness(100%) contrast(100%)');
       this.theme.nativeElement.style.opacity = '0';
       setTimeout(()=>{
         this.theme.nativeElement.src = 'assets/icons/icon-mode-brigth.png';
         this.theme.nativeElement.style.opacity = '1';
       },500)
     }else{
-
       this.theme.nativeElement.setAttribute('data-mode','#000000');
       this.theme.nativeElement.setAttribute('data-text','#FFFFFF');
       this.theme.nativeElement.setAttribute('data-bgsection','inherit');
       this.theme.nativeElement.setAttribute('data-bgcolor','inherit');
-      //this.theme.nativeElement.setAttribute('data-art','invert(0%) sepia(20%) saturate(70%) hue-rotate(1deg) brightness(100%) contrast(100%)');
       this.theme.nativeElement.style.opacity = '0';
-
       setTimeout(()=>{
         this.theme.nativeElement.src = 'assets/icons/icon-mode-dark.png';
         this.theme.nativeElement.style.opacity = '1';
       },500)
-
     }
-
   }
   constructor(private theme: ElementRef) { }
-
-
 }

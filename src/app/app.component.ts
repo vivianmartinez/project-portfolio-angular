@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   public text_welcome: Array<string>;
   @ViewChild('tooltiptext', {read: ElementRef}) tooltip:any;
 
-  constructor(private themeService: ThemeService){
+  constructor(private _themeService: ThemeService){
     this.title           = 'Vivian Martínez';
     this.logo            = 'logo-vm.png';
     this.footer_text     = 'Vivian Martínez - All rights reserved';
@@ -29,10 +29,10 @@ export class AppComponent implements OnInit{
 
   changeTheme():void{
     if(document.getElementById('theme')?.classList.contains('dark--mode')){
-      this.themeService.modeDarkOn();
+      this._themeService.modeDarkOn();
       this.tooltip.nativeElement.textContent = 'Tema claro';
     }else{
-      this.themeService.modeDarkOff();
+      this._themeService.modeDarkOff();
       this.tooltip.nativeElement.textContent = 'Tema oscuro';
     }
   }
