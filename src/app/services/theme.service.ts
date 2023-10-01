@@ -5,18 +5,18 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ThemeService{
+export class ThemeService {
 
   private themeDark = new BehaviorSubject<boolean>(false);
   themeDark$ = this.themeDark.asObservable();
 
-  constructor(){}
+  constructor() {}
 
-  modeDarkOn():void{
+  modeDarkOn():void {
     this.themeDark.next(true);
   }
 
-  modeDarkOff():void{
+  modeDarkOff():void {
     this.themeDark.next(false);
   }
 }

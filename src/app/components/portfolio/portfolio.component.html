@@ -8,11 +8,9 @@
                 <div class="img-st" >
                   <img src="assets/images/{{item.image_project}}" alt="{{item.name_project}} Photo">
                 </div>
-                <div ngClass="mask-image">
-                    <!-- logo de empresa -->
-                    <div *ngIf="item.logo">
-                      <img src="assets/images/{{item.logo}}" alt="Logo {{item.name_project}}" ngClass="logo-project">
-                    </div>
+                <!-- logo if exists -->
+                <div ngClass="mask-image" *ngIf="item.logo">
+                    <img src="assets/images/{{item.logo}}" alt="Logo {{item.name_project}}" ngClass="logo-project">
                 </div>
               </a>
             </div>

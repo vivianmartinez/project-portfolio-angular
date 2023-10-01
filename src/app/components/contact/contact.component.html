@@ -15,12 +15,12 @@
           <div class="msg-validate"><span *ngIf="subject.touched && !subject.valid" class="msg-error">El asunto no es válido</span></div>
 
           <label for="message">Mensaje:</label>
-          <textarea name="message" rows="5" #message = "ngModel" [(ngModel)] = "user.message" required pattern="[áéíóúÁÉÍÓÚ\w\s\d\.,-¿\\?]+"></textarea>
+          <textarea name="message" rows="4" #message = "ngModel" [(ngModel)] = "user.message" required pattern="[áéíóúÁÉÍÓÚ\w\s\d\.,-¿\\?]+"></textarea>
           <div class="msg-validate"><span *ngIf="message.touched && !message.valid" class="msg-error">El mensaje no es válido</span></div>
-          <!-- sección envío datos y respuesta al usuario -->
+          <!-- submit form section -->
           <div class="section-submit">
             <div class="msg-loader" #loader><span class="spin"></span>Enviando...</div>
-            <!-- visualizar respuesta de envío de formulario -->
+            <!-- show response to user -->
             <div class="msg-validate">
               <div [ngStyle]="{'color' : response_mail == 'success' ? '#ffffff' : '#f33e3e'}" *ngIf="response_mail != 'send'">
                 <ng-container *ngIf="response_mail == 'success' ; else failedmail">
@@ -29,7 +29,7 @@
               </div>
               <ng-template #failedmail>{{response_mail}}</ng-template>
             </div>
-            <!-- envío formulario -->
+            <!-- submit form -->
             <button type="submit" class="btn-contact" [disabled]="!contactForm.valid" [ngClass]="{'disabled-btn':!contactForm.valid}" [ngStyle]="{'background-color': !contactForm.valid ? '#d1d1d1' : '#000000', 'color': !contactForm.valid ? '#000000' : '#e6c101' }">Enviar</button>
           </div>
         </form>

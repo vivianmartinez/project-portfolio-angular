@@ -4,7 +4,7 @@
         <div id="logo" class="logo-portfolio"><img src="assets/art/{{logo}}" alt="logo"></div>
         <div class="title-portfolio">{{title}}</div>
       </div>
-      <div ngClass="theme-mode" >
+      <div class="theme-mode" >
         <img appTheme  id="theme" src="assets/icons/icon-mode-dark.png" alt="theme-mode" class="theme" data-mode="#000000"
         data-bgsection="inherit" data-text="#FFFFFF" data-art = "invert(0%) sepia(20%) saturate(70%) hue-rotate(1deg) brightness(100%) contrast(100%)" data-bgcolor="inherit" (click)="changeTheme()">
         <span class="text-tooltip" #tooltiptext>Tema oscuro</span>
@@ -27,7 +27,6 @@
     </div>
     <div class="menu">
       <ul>
-        <!--<li><a routerLink="home" routerLinkActive="active" ariaCurrentWhenActive="page" ngClass="ef-slide">inicio</a></li>-->
         <li><a routerLink="about" routerLinkActive="active" ariaCurrentWhenActive="page" ngClass="ef-slide" >sobre mí</a></li>
         <li><a routerLink="portfolio" routerLinkActive="active" ariaCurrentWhenActive="page" ngClass="ef-slide">proyectos</a></li>
         <li><a routerLink="contact" routerLinkActive="active" ariaCurrentWhenActive="page" ngClass="ef-slide">contacto</a></li>
@@ -37,8 +36,15 @@
               <a href="{{item.link_network}}" target="_blank">
                 <i class="icon">
                   <img src="assets/icons/{{item.image_network}}" alt="{{item.name_network}}">
+                  <span class="text-tooltip">{{item.name_network}}</span>
                 </i>
               </a>
+            </li>
+            <li>
+              <i>
+                <img src="assets/icons/download-icon.png" alt="Icon Download" (click)="downloadFile()" class="icon-download">
+                <span class="text-tooltip">descarga mi cv</span>
+              </i>
             </li>
           </ul>
         </li>

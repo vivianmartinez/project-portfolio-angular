@@ -93,15 +93,19 @@ body{
   transition: all 1.5s ease-out;
   width: 35px;
 }
-.theme-mode .text-tooltip{
-  visibility: hidden;
-  width: 100px;
+.theme-mode:hover .text-tooltip{
   right: 30px;
   top: 60px;
+}
+.text-tooltip{
+  visibility: hidden;
+  width: 100px;
   background-color: var(--color-web);
   color: #000000;
   border-radius: 5px;
   padding: 4px 0;
+  font-style: normal;
+  font-size: 14px;
   text-align: center;
   position: absolute;
   z-index: 1;
@@ -121,7 +125,7 @@ img.theme:hover{
 .aside-menu {
   grid-column: 1 / 2;
   font-size: 20px;
-  padding-top: 8em;
+  padding-top: 6em;
 }
 .menu {
   display: flex;
@@ -138,9 +142,10 @@ img.theme:hover{
 .aside-menu .menu ul li{
   width: 100%;
   margin-bottom: 40px;
+}
+a.ef-slide {
   text-align: center;
 }
-
 .ef-slide:hover,
 .ef-slide:focus {
   box-shadow: inset 15.65em 0 0 0 var(--hover);
@@ -186,13 +191,24 @@ li.l-networks{
   width: 10px;
 }
 .menu-networks > li > a .icon img{
-  width: 30px;
   height: 30px;
+  width: 30px;
   filter: var(--filter-color);
+}
+.menu-networks > li > a .icon img, .icon-download{
   transition: 0.3s;
  }
- .menu-networks > li > a .icon img:hover{
+ .menu-networks > li > a .icon img:hover, .icon-download:hover{
   transform: scale(1.3,1.3);
+ }
+ .menu-networks > li:hover .text-tooltip{
+  visibility: visible;
+  top: 40px;
+}
+ .icon-download{
+  height: 28px;
+  cursor: pointer;
+  filter: invert(86%) sepia(37%) saturate(3179%) hue-rotate(9deg) brightness(101%) contrast(102%);;
  }
 .main{
   grid-column: 2 / -1;
@@ -381,9 +397,12 @@ ul.text-welcome{
   transition: 0.5s;
   opacity:0;
   animation: 0.5s linear 0s normal forwards appear;
+  -ms-animation: 0.5s linear 0s normal forwards appear;
+	-moz-animation: 0.5s linear 0s normal forwards appear;
+	-webkit-animation: 0.5s linear 0s normal forwards appear;
 }
 .about{
-  width: 70%;
+  width: 80%;
   text-align: center;
   border-radius: 30px;
   background-color: var(--section-bg-color);
@@ -391,7 +410,10 @@ ul.text-welcome{
   margin-top: 20px;
   transition: var(--bg-transition);
   opacity:0;
-  animation: 1.5s linear 0s normal forwards appear;
+  animation: 0.5s linear 0s normal forwards appear;
+  -ms-animation: 0.5s linear 0s normal forwards appear;
+	-moz-animation: 0.5s linear 0s normal forwards appear;
+	-webkit-animation: 0.5s linear 0s normal forwards appear;
 }
 @keyframes appear {
   0% { opacity: 0;}
@@ -441,7 +463,6 @@ article.text-about {
 .list-networks > li > a .icon img{
  width: 25px;
  height: 25px;
- filter: invert(36%) sepia(1%) saturate(691%) hue-rotate(326deg) brightness(103%) contrast(79%);
  transition: 0.5s;
 }
 .list-networks li a .icon:hover{
@@ -453,10 +474,13 @@ article.text-about {
 .content-portfolio{
   text-align: left;
   font-family: var(--font-content);
-  width: 90%;
+  width: 100%;
   padding: 7em 0.5em;
   margin-bottom: 2em;
   animation: 0.5s linear 0s normal forwards appear;
+  -ms-animation: 0.5s linear 0s normal forwards appear;
+	-moz-animation: 0.5s linear 0s normal forwards appear;
+	-webkit-animation: 0.5s linear 0s normal forwards appear;
   opacity:0;
 }
 
@@ -521,7 +545,6 @@ p.title-content{
 }
 .logo-project{
   width: 80%;
-  margin-left: 10%;
 }
 .image-project:hover{
   filter: hue-rotate(0deg) saturate(100%) brightness(100%) contrast(100%) invert(0%) sepia(0%) opacity(100%) blur(0px);
@@ -696,7 +719,7 @@ a.btn-project{
 .tool__typescript{
   --back-tool: rgb(52, 183, 230);
 }
-.tool__angular{
+.tool__html{
   --back-tool: rgb(241, 98, 27);
 }
 .tool__corel-draw{
@@ -758,32 +781,42 @@ button.btn-project-back:hover, button.btn-contact:hover {
 .container-form{
   font-family: var(--font-content);
   color: var(--text-color-mode);
-  width: 0%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-bg-mail);
   transition: var(--bg-transition);
-  animation: 1s linear 0s normal forwards appearmail;
-  -ms-animation: 1s linear 0s normal forwards appearmail;
-	-moz-animation: 1s linear 0s normal forwards appearmail;
-	-webkit-animation: 1s linear 0s normal forwards appearmail;
-}
-@keyframes appearmail{
-  0% { opacity: 0; width: 0;}
-  50% { opacity: 1; width: 50%;}
-  100%  {width: 100%;}
+  animation: 0.5s linear 0s normal forwards appear;
 }
 .contact-form {
   width: 50%;
+  padding: 40px 40px 40px 60px;
 }
 .contact-form form{
   width: 0;
   display: block;
-  padding: 50px 50px 40px 100px;
-  animation: 0.5s linear 0s normal forwards appearform;
+  animation: 0.8s linear 0s normal forwards appearform;
+  -ms-animation: 0.8s linear 0s normal forwards appearform;
+	-moz-animation: 0.8s linear 0s normal forwards appearform;
+	-webkit-animation: 0.8s linear 0s normal forwards appearform;
 }
 @keyframes appearform{
+  0% { opacity: 0; width: 0;}
+  50% { opacity: 1; width: 50%;}
+  100%  {width: 100%;}
+}
+@-webkit-keyframes appearform {
+  0% { opacity: 0; width: 0;}
+  50% { opacity: 1; width: 50%;}
+  100%  {width: 100%;}
+}
+@-ms-keyframes appearform {
+  0% { opacity: 0; width: 0;}
+  50% { opacity: 1; width: 50%;}
+  100%  {width: 100%;}
+}
+@-moz-keyframes appearform {
   0% { opacity: 0; width: 0;}
   50% { opacity: 1; width: 50%;}
   100%  {width: 100%;}
@@ -909,9 +942,6 @@ button.btn-contact{
   .contact-form{
     width: 100%;
   }
-  .contact-form form {
-    padding: 50px 100px;
-  }
   .art-mail{
     width: 100%;
     align-items: flex-start;
@@ -926,9 +956,6 @@ button.btn-contact{
   }
   .contact-form{
     width: 100%;
-  }
-  .contact-form form {
-    padding: 50px 100px;
   }
   .art-mail{
     width: 100%;
@@ -999,11 +1026,7 @@ button.btn-contact{
     width: 100%;
   }
   .shape{
-    position: absolute;
-    width: 100%;
-  }
-  .shape img{
-    width: 100%;
+    display: none;
   }
   .content-contact{
     margin:0;
@@ -1016,6 +1039,7 @@ button.btn-contact{
   }
   .contact-form{
     width: 100%;
+    padding: 0;
   }
   .art-mail {
     width: 100%;
@@ -1041,7 +1065,11 @@ button.btn-contact{
     overflow: hidden;
     margin: 0;
   }
-  .container-form form {
+  .container-form form{
+    padding: 50px 20px;
+  }
+  .contact-form{
+    width: 100%;
     padding: 0;
   }
   .msg-validate {
@@ -1108,11 +1136,7 @@ button.btn-contact{
     width: 100%;
   }
   .shape{
-    position: absolute;
-    width: 100%;
-  }
-  .shape img{
-    width: 100%;
+    display: none;
   }
   .content-contact{
     margin:0;
@@ -1120,11 +1144,9 @@ button.btn-contact{
   .container-form{
     display: block;
   }
-  .container-form form{
-    padding: 50px;
-  }
   .contact-form{
     width: 100%;
+    padding: 50px;
   }
   .art-mail {
     width: 100%;

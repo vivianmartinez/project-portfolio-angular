@@ -8,6 +8,5 @@ export const networks = [
     "name_network": "github",
     "link_network": "https://github.com/vivianmartinez",
     "image_network": "icon-github.png"
-  },
-
+  }
 ]

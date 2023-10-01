@@ -28,11 +28,15 @@ export class PortfolioComponent implements OnInit,AfterViewInit{
   effectImageProject():void{
     this.imgChildren.toArray().forEach((item:any)=>{
       item.nativeElement.addEventListener('mouseover',()=>{
-        item.nativeElement.querySelector('.mask-image').classList.add('bright')
+        if(item.nativeElement.querySelector('.mask-image')){
+          item.nativeElement.querySelector('.mask-image').classList.add('bright')
+        }
       });
 
       item.nativeElement.addEventListener('mouseout',()=>{
-        item.nativeElement.querySelector('.mask-image').classList.remove('bright');
+        if(item.nativeElement.querySelector('.mask-image')){
+          item.nativeElement.querySelector('.mask-image').classList.remove('bright');
+        }
       });
     });
   }

@@ -33,10 +33,10 @@ export const data = [
     "id": 4,
     "name_project":"Proyecto portfolio con Angular",
     "big_description": "Primeros pasos con Angular. He realizado un proyecto propio usando el framework Angular en su versión 16.1.8. Este consiste en el desarrollo de un sitio web sencillo tipo portfolio, cuyo propósito es poner en práctica los conocimientos adquiridos referentes a JavaScript, Typescript y el framework Angular. En el proyecto he utilizado datos estáticos, pero a futuro lo ideal es implementar una API con la que se obtengan los datos desde una base de datos. A continuación detallo el proceso:",
-    "specifications": ["Maquetación del sitio con CSS.","Creación de componentes y rutas.","Interpolación para mostrar en la vista los valores de las propiedades.","Hacer uso de las directivas estructurales y de atributo.","Crear pipes y directivas personalizadas.","Crear servicios para obtener los datos y comunicar los componentes.","Diseño de íconos y el clipart del personaje que me representa usando Corel Draw (excepto íconos Linkedin y GitHub)."],
+    "specifications": ["Maquetación del sitio con CSS.","Creación de componentes y rutas.","Interpolación para mostrar en la vista los valores de las propiedades.","Hacer uso de las directivas estructurales y de atributo.","Crear pipes y directivas personalizadas.","Crear servicios para obtener los datos y comunicar los componentes.","Crear servicio para enviar correo electrónico usando API FormSubmit.","Diseño de íconos y el clipart del personaje que me representa usando Corel Draw (excepto íconos Linkedin y GitHub)."],
     "image_project": "bg-portfolio.png",
     "url_project": "",
-    "tools_project": [{"name":"Angular","percent":50},{"name":"Typescript","percent":10},{"name":"CSS","percent":30},{"name":"JavaScript","percent":5},{"name":"Corel Draw","percent":5}],
+    "tools_project": [{"name":"Typescript","percent":45},{"name":"HTML","percent":15},{"name":"CSS","percent":35},{"name":"JavaScript","percent":3},{"name":"Corel Draw","percent":2}],
     "logo":"logo-color-vm.png"
   }
 ];

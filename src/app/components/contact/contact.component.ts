@@ -12,7 +12,7 @@ import { Subscription} from 'rxjs';
 })
 export class ContactComponent implements OnInit, OnDestroy, AfterViewInit{
   public user: User;
-  public response_mail: any;
+  public response_mail: unknown;
   public artmail: string;
   public dark: boolean = false;
   private subscription: Subscription = new Subscription();

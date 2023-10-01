@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { networks } from './models/data-networks';
 import { ThemeService } from './services/theme.service';
+import { DownloadService } from './services/download.service';
 
 @Component({
   selector: 'app-root',
@@ -35,5 +36,9 @@ export class AppComponent implements OnInit{
       this._themeService.modeDarkOff();
       this.tooltip.nativeElement.textContent = 'Tema oscuro';
     }
+  }
+
+  downloadFile() {
+    DownloadService.download('/assets/pdf/','cv-vivian-martinez.pdf','cv-vivianmartinez');
   }
 }

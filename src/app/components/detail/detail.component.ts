@@ -15,7 +15,7 @@ export class DetailComponent implements OnInit{
 
   constructor(private _projetService: ProjectService, private _router: Router, private _routeActivate:ActivatedRoute){
     this.project = new Project(0,'','','',[],'','',[],'');
-    this.title   = 'Especificaciones del Proyecto';
+    this.title   = 'Especificaciones';
   }
 
   ngOnInit(): void {
