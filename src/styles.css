@@ -591,8 +591,6 @@ a.btn-project{
   margin-bottom: 200px;
   font-family: var(--font-content);
   animation: 0.5s linear 0s normal forwards appear;
-  background-color:var(--section-bg-color);
-  border-radius: 30px;
 }
 .specifications p{
   text-align: justify;
@@ -949,6 +947,9 @@ button.btn-contact{
   .image-mail {
     width: 50%;
   }
+  .creative-me > img{
+    width: 40%;
+  }
 }
 @media screen and (max-width: 1024px) {
   .container-form{
@@ -963,6 +964,12 @@ button.btn-contact{
   }
   .image-mail {
     width: 50%;
+  }
+  .creative-me > img{
+    width: 40%;
+  }
+  .content-projects {
+    justify-content: center;
   }
 }
 
@@ -998,6 +1005,9 @@ button.btn-contact{
   }
   .about{
     width: 100%;
+  }
+  .creative-me > img{
+    width: 50%;
   }
   article.text-about {
     max-height: 350px;
@@ -1108,6 +1118,9 @@ button.btn-contact{
   }
   .about{
     width: 100%;
+  }
+  .creative-me > img{
+    width: 50%;
   }
   article.text-about {
     max-height: 350px;

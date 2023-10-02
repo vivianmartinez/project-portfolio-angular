@@ -4,6 +4,7 @@ import { Directive, HostListener, ElementRef } from '@angular/core';
   selector: '[appTheme]'
 })
 export class ThemeDirective {
+  constructor(private theme: ElementRef) {}
 
   @HostListener("click",["$event"])
   onClick(e:any): void{
@@ -38,5 +39,4 @@ export class ThemeDirective {
       },500)
     }
   }
-  constructor(private theme: ElementRef) { }
 }

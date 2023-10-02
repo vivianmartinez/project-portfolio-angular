@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConvertDataPipe } from './pipes/convert-data.pipe';
 import { ReplaceCharacterPipe } from './pipes/replace-character';
 import { TrimDescriptionPipe } from './pipes/trim-description.pipe';
-import { ThemeDirective } from './theme.directive';
+import { ThemeDirective } from './directives/theme.directive';
 
 
 @NgModule({
@@ -29,7 +29,6 @@ import { ThemeDirective } from './theme.directive';
     TrimDescriptionPipe,
     ReplaceCharacterPipe,
     ThemeDirective
-
   ],
   imports: [
     BrowserModule,
