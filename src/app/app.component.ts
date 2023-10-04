@@ -39,6 +39,6 @@ export class AppComponent implements OnInit{
   }
 
   downloadFile() {
-    DownloadService.download('/assets/pdf/','cv-vivian-martinez.pdf','cv-vivianmartinez');
+    DownloadService.download('/assets/pdf/','cv-vivian-martinez.pdf');
   }
 }
