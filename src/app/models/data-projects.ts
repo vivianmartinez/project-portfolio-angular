@@ -38,5 +38,15 @@ export const data = [
     "url_project": "",
     "tools_project": [{"name":"Typescript","percent":45},{"name":"HTML","percent":15},{"name":"CSS","percent":35},{"name":"JavaScript","percent":3},{"name":"Corel Draw","percent":2}],
     "logo":"logo-color-vm.png"
+  },
+  {
+    "id": 5,
+    "name_project":"Administrador de archivos Angular",
+    "big_description": "Proyecto generado con  Angular CLI version 16.2.5. que permite administrar archivos interactuando con API creada en PHP, de manera que permite listar todos los archivos con ícono correspondiente según extensión, navegar entre directorios, renombrar, eliminar, descargar, así como también actualizar:",
+    "specifications": ["Maquetación del sitio con CSS.","Creación de componentes y rutas.","Crear servicio para conexión con API creada  en PHP.","Instalar angular-fontawesome"],
+    "image_project": "admin-files.png",
+    "url_project": "https://github.com/vivianmartinez/project-admin-files",
+    "tools_project": [{"name":"Typescript","percent":65},{"name":"HTML","percent":20},{"name":"CSS","percent":15}],
+    "logo":"logo-color-vm.png"
   }
 ];
